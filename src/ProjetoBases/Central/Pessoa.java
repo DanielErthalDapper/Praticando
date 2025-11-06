@@ -2,7 +2,7 @@ package ProjetoBases.Central;
 
 import ProjetoBases.Ferramentas;
 
-public class Pessoa
+public abstract class Pessoa
 {
     private String nome;
     private String cpf;

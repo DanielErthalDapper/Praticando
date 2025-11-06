@@ -6,20 +6,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Funcionario extends Pessoa
+public abstract class Funcionario extends Pessoa
 {
     private String senha;
     private double salario;
     private String cargo;
+    private int nivelAcesso;
     public static final List<String> listaCargos = new ArrayList<>(Arrays.asList
             ("Professor", "Secretário", "Vendedor", "CDA", "BDR",
                     "Professor", "Coordenador Comercial", "Coordenador Pedagógico"));
 
-    public Funcionario(String nome, String cpf, String email, String senha, double salario, String cargo) {
+    public Funcionario(String nome, String cpf, String email, String senha, double salario, String cargo, int nivelAcesso) {
         super(nome, cpf, email);
         this.senha = senha;
         this.salario = salario;
         this.cargo = cargo;
+        this.nivelAcesso = nivelAcesso;
     }
 
     public String getSenha() {
@@ -34,6 +36,10 @@ public class Funcionario extends Pessoa
         return cargo;
     }
 
+    public int getNivelAcesso() {
+        return nivelAcesso;
+    }
+
     public void setSenha(String senha) {
         this.senha = senha;
     }
@@ -44,6 +50,10 @@ public class Funcionario extends Pessoa
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public void setNivelAcesso(int nivelAcesso) {
+        this.nivelAcesso = nivelAcesso;
     }
 
     public static void validacaoSenha(String senha)
@@ -132,6 +142,50 @@ public class Funcionario extends Pessoa
         if(!contemCargo)
         {
             throw new IllegalArgumentException("ERRO! O CARGO ESCOLHIDO DEVE ESTAR EM NOSSAS OPÇÕES");
+        }
+    }
+
+    public static void validarNivelAcesso(int nivelAcesso)
+    {
+        if(nivelAcesso > 6 || nivelAcesso < 1)
+        {
+            throw new IllegalArgumentException("ERRO! NIVEL DE ACESSO INVÁLIDO");
+        }
+    }
+
+    public static void temNivelAcesso1(Funcionario funcionario) //NIVEL DO SECRETARIO
+    {
+        if(!(funcionario.getNivelAcesso() == 1))
+        {
+            throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
+        }
+    }
+    public static void temNivelAcesso2(Funcionario funcionario) // NIVEL DO VENDEDOR
+    {
+        if(!(funcionario.getNivelAcesso() == 2))
+        {
+            throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
+        }
+    }
+    public static void temNivelAcesso3(Funcionario funcionario) //NIVEL DO PROFESSOR
+    {
+        if(!(funcionario.getNivelAcesso() == 3))
+        {
+            throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
+        }
+    }
+    public static void temNivelAcesso4(Funcionario funcionario) //NIVEL DO DIRETOR
+    {
+        if(!(funcionario.getNivelAcesso() == 4))
+        {
+            throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
+        }
+    }
+    public static void temNivelAcesso5(Funcionario funcionario) //NIVEL DO
+    {
+        if(!(funcionario.getNivelAcesso() == 5))
+        {
+            throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
         }
     }
 }
