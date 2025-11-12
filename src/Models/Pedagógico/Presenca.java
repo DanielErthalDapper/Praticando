@@ -1,42 +1,41 @@
 package Models.Pedagógico;
 
-import Models.Central.Listas;
+import java.sql.Date;
 
 public class Presenca
 {
-    /*Atributos:
-aluno
-status (presente/falta)
-data
+    private final Long idPresenca;
+    private final boolean presenca;
+    private final Date dataLancamento;
+    private final Aluno aluno;
+    private final Aula aula;
 
-Ações possíveis:
-registrar presença ou falta
-emitir relatório de frequência por aluno*/
-
-    private String presenca;
-
-    public Presenca(String  presenca)
-    {
+    public Presenca(Long idPresenca, boolean presenca, Date dataLancamento, Aluno aluno, Aula aula) {
+        this.idPresenca = idPresenca;
         this.presenca = presenca;
-
-        Listas.presenca.add(this);
+        this.dataLancamento = dataLancamento;
+        this.aluno = aluno;
+        this.aula = aula;
     }
 
-    public String getPresenca()
+    public Presenca(boolean presenca, Date dataLancamento, Aluno aluno, Aula aula)
     {
+        this(null, presenca, dataLancamento, aluno, aula);
+    }
+
+    public Long getIdPresenca() {
+        return idPresenca;
+    }
+    public boolean isPresenca() {
         return presenca;
     }
-
-    public void setPresente(String presenca)
-    {
-        this.presenca = presenca;
+    public Date getDataLancamento() {
+        return dataLancamento;
     }
-
-    public static void validarPresenca(String presenca)
-    {
-        if(!presenca.equals("C") || presenca.equals("F"))
-        {
-            throw new IllegalArgumentException("ERRO! PRESENCA DEVE SER 'C' OU 'F'");
-        }
+    public Aluno getAluno() {
+        return aluno;
+    }
+    public Aula getAula() {
+        return aula;
     }
 }

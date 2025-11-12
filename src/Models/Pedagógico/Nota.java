@@ -1,44 +1,30 @@
 package Models.Pedagógico;
 
+import java.sql.Date;
+
 public class Nota
 {
-    /*Atributos:
-disciplina
-valor da nota
-aluno
-data de lançamento
+    private final Long idNota;
+    private final double valorDaNota;
+    private final Date dataLancamento;
 
-Ações possíveis:
-registrar nota
-recalcular média final
-emitir boletim*/
-
-    private double valorDaNota;
-
-    public Nota(double valorDaNota)
-    {
+    public Nota(Long idNota, Date dataLancamento, double valorDaNota) {
+        this.idNota = idNota;
+        this.dataLancamento = dataLancamento;
         this.valorDaNota = valorDaNota;
     }
 
-    public double getValorDaNota()
-    {
+    public Nota(Date dataLancamento, double valorDaNota) {
+        this(null, dataLancamento, valorDaNota);
+    }
+
+    public Long getIdNota() {
+        return idNota;
+    }
+    public double getValorDaNota() {
         return valorDaNota;
     }
-
-    public void setValorDaNota(double valorDaNota)
-    {
-        this.valorDaNota = valorDaNota;
-    }
-
-    public static void validacaoNota(double valorDaNota)
-    {
-        if(valorDaNota < 0)
-        {
-            throw new IllegalArgumentException("ERRO! A NOTA NÃO PODE SER NEGATIVA");
-        }
-        if(valorDaNota > 10)
-        {
-            throw new IllegalArgumentException("ERRO! A NOTA NÃO PODE SER MAIOR QUE 10");
-        }
+    public Date getDataLancamento() {
+        return dataLancamento;
     }
 }

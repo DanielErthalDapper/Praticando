@@ -1,18 +1,23 @@
 package Models.Administrativo;
 
 import Models.Central.FuncionarioModel;
+import Models.Gestao.Cargos;
 
 public class Secretario extends FuncionarioModel
 {
-    private String telefone;
-    private double salarioComissao;
+    private final String telefone;
+    private final double salarioComissao;
 
-    public Secretario(String nome, String cpf, String email, String senha,
-                      double salario, double salarioComissao, String cargo, int nivelAcesso, String telefone)
+    public Secretario(Long idSecretario, String nome, String cpf, String email, String senha, double salario, double salarioComissao, Cargos cargo, int nivelAcesso, String telefone)
     {
-        super(nome, cpf, email, senha, salario, cargo, nivelAcesso);
+        super(idSecretario, nome, cpf, email, senha, salario, cargo, nivelAcesso);
         this.telefone = telefone;
         this.salarioComissao = salarioComissao;
+    }
+
+    public Secretario(String nome, String cpf, String email, String senha, double salario, double salarioComissao, Cargos cargo, int nivelAcesso, String telefone)
+    {
+        this(null, nome, cpf, email, senha, salario, salarioComissao, cargo, nivelAcesso, telefone);
     }
 
     public String getTelefone()
@@ -22,13 +27,4 @@ public class Secretario extends FuncionarioModel
     public double getSalarioComissao() {
         return salarioComissao;
     }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-    public void setSalarioComissao(double salarioComissao) {
-        this.salarioComissao = salarioComissao;
-    }
-
-    //VALIDAÇÕES DE TELEFONE E SALÁRIO COMISSAO
 }

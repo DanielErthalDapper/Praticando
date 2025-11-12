@@ -1,4 +1,4 @@
-package Models.Central;
+package Models.Gestao;
 
 public class Plano {
 }
