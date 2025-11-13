@@ -2,26 +2,39 @@ package Models.Pedagógico;
 
 import Models.Central.FuncionarioModel;
 import Models.Gestao.Cargos;
+import Models.Gestao.Idioma;
 
 public class Professor extends FuncionarioModel
 {
-    private final String especialidadeIdioma;
+    private Idioma idioma;
 
     // -- CONSTRUTOR COM ID -- //
-    public Professor(Long idProfessor, String nome, String cpf, String email, String senha, double salario, Cargos cargo, int nivelAcesso, String especialidadeIdioma)
+    public Professor(Long idProfessor, String nome, String cpf, String email, String senha, double salario, Cargos cargo, int nivelAcesso, Idioma idioma)
     {
         super(idProfessor, nome, cpf, email, senha, salario, cargo, nivelAcesso);
-        this.especialidadeIdioma = especialidadeIdioma;
+        AlteraIdioma(idioma);
     }
 
     // -- CONSTRUTOR SEM ID -- //
-    public Professor(String nome, String cpf, String email, String senha, double salario, Cargos cargo, int nivelAcesso, String especialidadeIdioma)
+    public Professor(String nome, String cpf, String email, String senha, double salario, Cargos cargo, int nivelAcesso, Idioma idioma)
     {
-        this(null, nome, cpf, email, senha, salario, cargo, nivelAcesso, especialidadeIdioma);
+        this(null, nome, cpf, email, senha, salario, cargo, nivelAcesso, idioma);
     }
 
-    public String getEspecialidadeIdioma()
+    // -- GETTERS -- //
+    public Idioma getIdioma()
     {
-        return especialidadeIdioma;
+        return idioma;
+    }
+
+    // -- ALTERADOR -- //
+    public void AlteraIdioma(Idioma idioma)
+    {
+        if(idioma == null)
+        {
+            throw new IllegalArgumentException("ERRO! O IDIOMA NÃO PODE SER NULO");
+        }
+
+        this.idioma = idioma;
     }
 }

@@ -1,15 +1,18 @@
 package Models.Pedagógico;
 
+import Models.Gestao.Idioma;
+import Models.Gestao.Sala;
+
 public class Turma
 {
     private final Long idTurma;
     private final int numeroTurma;
-    private final String idioma;
-    private final String professor;
-    private final String sala;
+    private final Idioma idioma;
+    private Professor professor;
+    private Sala sala;
 
     // -- CONSTRUTOR COM ID -- //
-    public Turma(Long idTurma, int numeroTurma, String idioma, String professor, String sala)
+    public Turma(Long idTurma, int numeroTurma, Idioma idioma, Professor professor, Sala sala)
     {
         this.idTurma = idTurma;
         this.numeroTurma = numeroTurma;
@@ -19,7 +22,7 @@ public class Turma
     }
 
     // -- CONSTRUTOR SEM ID -- //
-    public Turma(int numeroTurma, String idioma, String professor, String sala)
+    public Turma(int numeroTurma, Idioma idioma, Professor professor, Sala sala)
     {
         this(null, numeroTurma, idioma, professor, sala);
     }
@@ -28,16 +31,23 @@ public class Turma
     public int getNumeroTurma() {
         return numeroTurma;
     }
-    public String getIdioma()
+    public Idioma getIdioma()
     {
         return idioma;
     }
-    public String getProfessor()
+    public Professor getProfessor()
     {
         return professor;
     }
-    public String getSala()
+    public Sala getSala()
     {
         return sala;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 }
