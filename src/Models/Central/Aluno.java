@@ -1,6 +1,6 @@
 package Models.Central;
 
-public class Aluno extends PessoaModel
+public class Aluno extends Pessoa
 {
     private final String telefone;
 

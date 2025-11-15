@@ -2,7 +2,7 @@ package Models.Central;
 
 import Models.Gestao.Cargos;
 
-public class Vendedor extends FuncionarioModel
+public class Vendedor extends Funcionario
 {
     private final double metasMensais;
     private final int contratosFechadosNoMes;

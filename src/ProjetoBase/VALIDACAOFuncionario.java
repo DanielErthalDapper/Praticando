@@ -1,6 +1,6 @@
 package ProjetoBase;
 
-import Models.Central.FuncionarioModel;
+import Models.Central.Funcionario;
 import Util.Ferramentas;
 
 public class VALIDACAOFuncionario
@@ -102,35 +102,35 @@ public class VALIDACAOFuncionario
         }
     }
 
-    public static void temNivelAcesso1(FuncionarioModel funcionario) //NIVEL DO SECRETARIO
+    public static void temNivelAcesso1(Funcionario funcionario) //NIVEL DO SECRETARIO
     {
         if(!(funcionario.getNivelAcesso() == 1))
         {
             throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
         }
     }
-    public static void temNivelAcesso2(FuncionarioModel funcionario) // NIVEL DO VENDEDOR
+    public static void temNivelAcesso2(Funcionario funcionario) // NIVEL DO VENDEDOR
     {
         if(!(funcionario.getNivelAcesso() == 2))
         {
             throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
         }
     }
-    public static void temNivelAcesso3(FuncionarioModel funcionario) //NIVEL DO PROFESSOR
+    public static void temNivelAcesso3(Funcionario funcionario) //NIVEL DO PROFESSOR
     {
         if(!(funcionario.getNivelAcesso() == 3))
         {
             throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
         }
     }
-    public static void temNivelAcesso4(FuncionarioModel funcionario) //NIVEL DO DIRETOR
+    public static void temNivelAcesso4(Funcionario funcionario) //NIVEL DO DIRETOR
     {
         if(!(funcionario.getNivelAcesso() == 4))
         {
             throw new IllegalArgumentException("ERRO! FALTA DE PERMISSÃO");
         }
     }
-    public static void temNivelAcesso5(FuncionarioModel funcionario) //NIVEL DO
+    public static void temNivelAcesso5(Funcionario funcionario) //NIVEL DO
     {
         if(!(funcionario.getNivelAcesso() == 5))
         {

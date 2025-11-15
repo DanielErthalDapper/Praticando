@@ -3,7 +3,7 @@ package Models.Central;
 import Models.Gestao.Cargos;
 import Models.Gestao.Idioma;
 
-public class Professor extends FuncionarioModel
+public class Professor extends Funcionario
 {
     private Idioma idioma;
 

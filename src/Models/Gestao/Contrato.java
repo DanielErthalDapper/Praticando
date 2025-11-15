@@ -2,6 +2,7 @@ package Models.Gestao;
 
 import Models.Central.Aluno;
 import Models.Central.Responsavel;
+import Models.Gestao.Enum.StatusContrato;
 
 import java.time.LocalDate;
 
@@ -13,9 +14,9 @@ public class Contrato
     private final Plano plano;
     private final LocalDate dataInicio;
     private final LocalDate dataFim;
-    private final String status;
+    private final StatusContrato status;
 
-    public Contrato(Long idContrato, Aluno aluno, Responsavel responsavel, Plano plano, LocalDate dataInicio, LocalDate dataFim, String status) {
+    public Contrato(Long idContrato, Aluno aluno, Responsavel responsavel, Plano plano, LocalDate dataInicio, LocalDate dataFim, StatusContrato status) {
         this.idContrato = idContrato;
         this.aluno = aluno;
         this.responsavel = responsavel;
@@ -25,7 +26,7 @@ public class Contrato
         this.status = status;
     }
 
-    public Contrato(Aluno aluno, Responsavel responsavel, Plano plano, LocalDate dataInicio, LocalDate dataFim, String status)
+    public Contrato(Aluno aluno, Responsavel responsavel, Plano plano, LocalDate dataInicio, LocalDate dataFim, StatusContrato status)
     {
         this(null, aluno, responsavel, plano, dataInicio, dataFim, status);
     }
@@ -48,7 +49,7 @@ public class Contrato
     public LocalDate getDataFim() {
         return dataFim;
     }
-    public String getStatus() {
+    public StatusContrato getStatus() {
         return status;
     }
 }

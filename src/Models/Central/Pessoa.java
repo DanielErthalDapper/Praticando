@@ -1,8 +1,6 @@
 package Models.Central;
 
-import Util.Ferramentas;
-
-public abstract class PessoaModel
+public abstract class Pessoa
 {
     private final String nome;
     private final String cpf;
@@ -10,7 +8,7 @@ public abstract class PessoaModel
     private final Long idPessoa;
 
     // -----  CONSTRUTOR COM ID  ----- //
-    public PessoaModel(Long idPessoa, String nome, String cpf, String email) {
+    public Pessoa(Long idPessoa, String nome, String cpf, String email) {
         this.idPessoa = idPessoa;
         this.nome = nome;
         this.cpf = cpf;
@@ -18,7 +16,7 @@ public abstract class PessoaModel
     }
 
     // -  CONSTRUTOR SEM ID  - //
-    public PessoaModel(String nome, String cpf, String email)
+    public Pessoa(String nome, String cpf, String email)
     {
         this(null, nome, cpf, email);
     }

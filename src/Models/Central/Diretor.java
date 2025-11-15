@@ -4,7 +4,7 @@ import Models.Gestao.Cargos;
 
 import java.time.LocalDate;
 
-public class Diretor extends FuncionarioModel
+public class Diretor extends Funcionario
 {
     private int NumeroDeEscolas;
 

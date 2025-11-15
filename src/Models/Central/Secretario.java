@@ -2,7 +2,7 @@ package Models.Central;
 
 import Models.Gestao.Cargos;
 
-public class Secretario extends FuncionarioModel
+public class Secretario extends Funcionario
 {
     private final String telefone;
     private final double salarioComissao;

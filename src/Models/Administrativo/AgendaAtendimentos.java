@@ -1,4 +1,6 @@
 package Models.Administrativo;
 
-public class AgendaAtendimentos {
+public class AgendaAtendimentos
+{
+
 }

@@ -1,6 +1,6 @@
 package Models.Central;
 
-public class Responsavel extends PessoaModel
+public class Responsavel extends Pessoa
 {
     private final String telefone;
 
