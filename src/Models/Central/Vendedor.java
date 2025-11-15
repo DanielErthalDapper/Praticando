@@ -1,6 +1,5 @@
-package Models.Comercial;
+package Models.Central;
 
-import Models.Central.FuncionarioModel;
 import Models.Gestao.Cargos;
 
 public class Vendedor extends FuncionarioModel

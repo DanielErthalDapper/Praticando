@@ -1,5 +1,7 @@
 package Models.Pedagógico;
 
+import Models.Central.Aluno;
+
 import java.sql.Date;
 
 public class Presenca

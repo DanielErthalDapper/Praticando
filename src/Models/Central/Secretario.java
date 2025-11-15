@@ -1,6 +1,5 @@
-package Models.Administrativo;
+package Models.Central;
 
-import Models.Central.FuncionarioModel;
 import Models.Gestao.Cargos;
 
 public class Secretario extends FuncionarioModel

@@ -1,6 +1,5 @@
-package Models.Pedagógico;
+package Models.Central;
 
-import Models.Central.FuncionarioModel;
 import Models.Gestao.Cargos;
 import Models.Gestao.Idioma;
 

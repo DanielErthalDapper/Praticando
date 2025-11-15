@@ -1,5 +1,7 @@
 package Models.Pedagógico;
 
+import Models.Central.Professor;
+
 import java.sql.Date;
 
 public class Aula

@@ -1,6 +1,4 @@
-package Models.Pedagógico;
-
-import Models.Central.PessoaModel;
+package Models.Central;
 
 public class Aluno extends PessoaModel
 {

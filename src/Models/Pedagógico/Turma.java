@@ -1,5 +1,6 @@
 package Models.Pedagógico;
 
+import Models.Central.Professor;
 import Models.Gestao.Idioma;
 import Models.Gestao.Sala;
 
