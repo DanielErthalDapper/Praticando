@@ -8,17 +8,19 @@ public class Usuario
     private final String login;
     private final String senha;
     private final NivelAcesso nivelAcesso;
+    private boolean ativo = true;
 
-    public Usuario(Long idUsuario, String login, String senha, NivelAcesso nivelAcesso) {
+    public Usuario(Long idUsuario, String login, String senha, NivelAcesso nivelAcesso, boolean ativo) {
         this.idUsuario = idUsuario;
         this.login = login;
         this.senha = senha;
         this.nivelAcesso = nivelAcesso;
+        this.ativo = ativo;
     }
 
-    public Usuario(String login, String senha, NivelAcesso nivelAcesso)
+    public Usuario(String login, String senha, NivelAcesso nivelAcesso, boolean ativo)
     {
-        this(null, login, senha, nivelAcesso);
+        this(null, login, senha, nivelAcesso, true);
     }
 
     public Long getIdUsuario() {
@@ -32,5 +34,12 @@ public class Usuario
     }
     public NivelAcesso getNivelAcesso() {
         return nivelAcesso;
+    }
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 }

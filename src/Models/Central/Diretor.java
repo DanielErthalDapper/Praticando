@@ -8,13 +8,13 @@ public class Diretor extends Funcionario
 {
     private int NumeroDeEscolas;
 
-    public Diretor(Long idFuncionario, String nome, String cpf, String email, String senha, double salario, LocalDate dataContratacao, Cargos cargo, int nivelAcesso, int numeroDeEscolas) {
-        super(idFuncionario, nome, cpf, email, senha, salario, dataContratacao, cargo, nivelAcesso);
+    public Diretor(Long idFuncionario, String nome, String cpf, String email, double salario, LocalDate dataContratacao, Cargos cargo, int numeroDeEscolas) {
+        super(idFuncionario, nome, cpf, email, salario, dataContratacao, cargo);
         NumeroDeEscolas = numeroDeEscolas;
     }
 
-    public Diretor(String nome, String cpf, String email, String senha, double salario, LocalDate dataContratacao, Cargos cargo, int nivelAcesso, int numeroDeEscolas) {
-        super(null, nome, cpf, email, senha, salario, dataContratacao, cargo, nivelAcesso);
+    public Diretor(String nome, String cpf, String email, double salario, LocalDate dataContratacao, Cargos cargo, int numeroDeEscolas) {
+        super(null, nome, cpf, email, salario, dataContratacao, cargo);
         NumeroDeEscolas = numeroDeEscolas;
     }
 

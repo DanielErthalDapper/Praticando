@@ -2,21 +2,23 @@ package Models.Central;
 
 import Models.Gestao.Cargos;
 
+import java.time.LocalDate;
+
 public class Secretario extends Funcionario
 {
     private final String telefone;
     private final double salarioComissao;
 
-    public Secretario(Long idSecretario, String nome, String cpf, String email, String senha, double salario, double salarioComissao, Cargos cargo, int nivelAcesso, String telefone)
+    public Secretario(Long idSecretario, String nome, String cpf, String email, double salario, LocalDate dataContratacao, Cargos cargo, double salarioComissao,  String telefone)
     {
-        super(idSecretario, nome, cpf, email, senha, salario, cargo, nivelAcesso);
+        super(idSecretario, nome, cpf, email, salario, dataContratacao, cargo);
         this.telefone = telefone;
         this.salarioComissao = salarioComissao;
     }
 
-    public Secretario(String nome, String cpf, String email, String senha, double salario, double salarioComissao, Cargos cargo, int nivelAcesso, String telefone)
+    public Secretario(String nome, String cpf, String email, double salario, LocalDate dataContratacao, Cargos cargo, double salarioComissao,  String telefone)
     {
-        this(null, nome, cpf, email, senha, salario, salarioComissao, cargo, nivelAcesso, telefone);
+        this(null, nome, cpf, email, salario, dataContratacao, cargo, salarioComissao, telefone);
     }
 
     public String getTelefone()

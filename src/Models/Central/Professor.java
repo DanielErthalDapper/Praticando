@@ -3,21 +3,23 @@ package Models.Central;
 import Models.Gestao.Cargos;
 import Models.Gestao.Idioma;
 
+import java.time.LocalDate;
+
 public class Professor extends Funcionario
 {
     private Idioma idioma;
 
     // -- CONSTRUTOR COM ID -- //
-    public Professor(Long idProfessor, String nome, String cpf, String email, String senha, double salario, Cargos cargo, int nivelAcesso, Idioma idioma)
+    public Professor(Long idProfessor, String nome, String cpf, String email, double salario, LocalDate dataContratacao, Cargos cargo, Idioma idioma)
     {
-        super(idProfessor, nome, cpf, email, senha, salario, cargo, nivelAcesso);
+        super(idProfessor, nome, cpf, email, salario, dataContratacao, cargo);
         AlteraIdioma(idioma);
     }
 
     // -- CONSTRUTOR SEM ID -- //
-    public Professor(String nome, String cpf, String email, String senha, double salario, Cargos cargo, int nivelAcesso, Idioma idioma)
+    public Professor(String nome, String cpf, String email, double salario, LocalDate dataContratacao, Cargos cargo, Idioma idioma)
     {
-        this(null, nome, cpf, email, senha, salario, cargo, nivelAcesso, idioma);
+        this(null, nome, cpf, email, salario, dataContratacao, cargo, idioma);
     }
 
     // -- GETTERS -- //
