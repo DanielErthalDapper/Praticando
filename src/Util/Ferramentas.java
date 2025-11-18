@@ -65,6 +65,9 @@ public class Ferramentas
     public static final String BOLD = "\u001B[1m";
     public static final String UNDERLINE = "\u001B[4m";
     public static final String REVERSED = "\u001B[7m";
+    public static final String RESETSTILE = "\u001B[0m";
+    public static final String BLUESTILE = "\u001B[34m";
+    public static final String ITALIC = "\u001B[3m";
 
     private static Scanner ler = new Scanner(System.in);
 
